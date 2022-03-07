@@ -1,16 +1,12 @@
 <template>
   <div class="card">
-   <WatchlistToggleBadge :movie="movie" />
-    <img
-        class="card-img-top"
-        :src="getPosterHref(movie.poster_path, 'w342')"
-        alt="Movie poster"
-    >
-    <div class="card-body">
-      <h5 class="card-title">{{ movie.title }}</h5>
-      <p class="card-text">{{ movie.overview}} </p>
-      <a href="#" class="btn btn-primary">Read more...</a>
-    </div>
+     <WatchlistToggleBadge :movie="movie" />
+     <MoviePoster :url="movie.poster_path" size="w342" />
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">{{ movie.overview}} </p>
+        <a href="#" class="btn btn-primary">Read more...</a>
+      </div>
   </div>
 </template>
 
@@ -20,6 +16,7 @@ import getPosterHref from "../../poster/getPosterHref";
 import useWatchlist from "../hook/useWatchlist";
 import { computed } from "vue";
 import WatchlistToggleBadge from "./WatchlistToggleBadge.vue";
+import MoviePoster from "./MoviePoster.vue";
 
 const props = defineProps<{
   movie: Movie
