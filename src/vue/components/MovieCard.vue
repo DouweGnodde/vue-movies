@@ -1,7 +1,7 @@
 <template>
   <div class="card">
      <WatchlistToggleBadge :movie="movie" />
-     <MoviePoster :url="movie.poster_path" size="w342" />
+     <MoviePoster :url="movie.poster_path" size="w342"  />
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
         <p class="card-text">{{ movie.overview}} </p>
@@ -12,9 +12,6 @@
 
 <script lang="ts" setup>
 import Movie from "../../types/Movie";
-import getPosterHref from "../../poster/getPosterHref";
-import useWatchlist from "../hook/useWatchlist";
-import { computed } from "vue";
 import WatchlistToggleBadge from "./WatchlistToggleBadge.vue";
 import MoviePoster from "./MoviePoster.vue";
 

@@ -16,7 +16,6 @@
 
 <script lang="ts" setup>
 import Movie from "../../types/Movie";
-import getPosterHref from "../../poster/getPosterHref";
 import useWatchlist from "../hook/useWatchlist";
 import { computed } from "vue";
 

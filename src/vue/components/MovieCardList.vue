@@ -9,7 +9,7 @@
       <div
           v-for="movie in movies"
           :key="movie.id"
-          class="col-3"
+          class="col-sm-12 col-md-3"
       >
         <MovieCard :movie="movie" />
       </div>
