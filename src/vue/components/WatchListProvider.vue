@@ -25,25 +25,15 @@ effect(() => {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(watchList.value));
 })
 
-function getWatchListMovies(): Movie[] {
-  return watchList.value;
-}
-
-function removeFromWatchList(movie: Movie) {
-  const index = watchList.value.findIndex(it => it.id === movie.id);
-
-  if (index !== -1) {
-    watchList.value.splice(index, 1);
-  }
-}
-
-function addToWatchList(movie: Movie) {
-  watchList.value.push(movie);
-}
-
 provide('watchListContext', {
-  removeFromWatchList,
-  getWatchListMovies,
-  addToWatchList
+  removeFromWatchList: (movie: Movie) => {
+    const index = watchList.value.findIndex(it => it.id === movie.id);
+
+    if (index !== -1) {
+      watchList.value.splice(index, 1);
+    }
+  },
+  getWatchListMovies: () => watchList.value,
+  addToWatchList: (movie: Movie) => watchList.value.push(movie)
 } as WatchListContext)
 </script>
