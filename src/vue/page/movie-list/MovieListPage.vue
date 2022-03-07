@@ -1,8 +1,8 @@
 <template>
   <div>
     <MovieCardList v-if="initialized" :movies="movies" />
-    <h4 v-if="loading">Laden...</h4>
-    <div class="d-grid gap-2 pt-3">
+    <h4 class="text-center" v-if="loading">Laden...</h4>
+    <div v-if="initialized" class="d-grid gap-2 pt-3">
       <button class="btn btn-lg btn-primary btn-block" @click="loadMoreMovies">
         Load more
       </button>

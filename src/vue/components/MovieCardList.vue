@@ -21,7 +21,7 @@
 import MovieCard from "./MovieCard.vue";
 import Movie from "../../types/Movie";
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   movies: Movie[]
-}>(), { loading: false })
+}>()
 </script>
