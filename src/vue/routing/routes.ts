@@ -3,6 +3,7 @@ import WatchListPage from '../page/watch-list/WatchListPage.vue';
 import { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
+    { path: '/', meta: { title: 'Movies'}, component: MovieListPage },
     { path: '/movies', meta: { title: 'Movies'}, component: MovieListPage },
     { path: '/watch-list', meta: { title: 'Watch list'}, component: WatchListPage },
 ]

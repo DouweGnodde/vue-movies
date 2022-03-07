@@ -1,19 +1,6 @@
 <template>
   <div class="card">
-    <div
-        v-if="watchList"
-        class="badge bg-dark text-white position-absolute"
-        style="top: 0.5rem; right: 0.5rem; cursor: pointer"
-        @click="toggleWatchList"
-    >
-      <span v-if="watchList.watchListContains(movie)">
-        x Remove from watchlist
-      </span>
-      <span v-else>
-        + Add to watchlist
-      </span>
-
-    </div>
+   <WatchlistToggleBadge :movie="movie" />
     <img
         class="card-img-top"
         :src="getPosterHref(movie.poster_path, 'w342')"
@@ -31,18 +18,10 @@
 import Movie from "../../types/Movie";
 import getPosterHref from "../../poster/getPosterHref";
 import useWatchlist from "../hook/useWatchlist";
+import { computed } from "vue";
+import WatchlistToggleBadge from "./WatchlistToggleBadge.vue";
 
 const props = defineProps<{
   movie: Movie
 }>()
-
-const watchList = useWatchlist();
-
-function toggleWatchList(): void {
-  if (watchList.watchListContains(props.movie)) {
-    watchList.removeFromWatchList(props.movie);
-  } else {
-    watchList.addToWatchList(props.movie);
-  }
-}
 </script>

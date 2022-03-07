@@ -1,8 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="#!">Vue Movies</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <router-link class="navbar-brand" to="/">
+        <span style="color: #42b883; font-weight: 400">Vue</span> Movies
+      </router-link>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
           <li class="nav-item">
@@ -14,7 +15,7 @@
             <i class="bi-cart-fill me-1"></i>
             Watchlist
             <span class="badge bg-dark text-white ms-1 rounded-pill">
-              {{ watchList.getWatchList().length }}
+              {{ watchList.getWatchListMovies().length }}
             </span>
           </router-link>
         </form>

@@ -1,8 +1,7 @@
 import Movie from "./Movie";
 
 export default interface WatchListContext {
-    watchListContains: (movie: Movie) => boolean
-    getWatchList: () => Movie[]
+    getWatchListMovies: () => Movie[]
     addToWatchList: (movie: Movie) => void
     removeFromWatchList: (movie: Movie) => void
 }

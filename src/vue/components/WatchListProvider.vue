@@ -1,7 +1,5 @@
 <template>
-<div>
-  <slot></slot>
-</div>
+  <div><slot></slot></div>
 </template>
 
 <script lang="ts" setup>
@@ -27,16 +25,12 @@ effect(() => {
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(watchList.value));
 })
 
-function watchListContains(movie: Movie): boolean {
-  return watchList.value.filter(it => it.id === movie.id).length > 0;
-}
-
-function getWatchList(): Movie[] {
+function getWatchListMovies(): Movie[] {
   return watchList.value;
 }
 
 function removeFromWatchList(movie: Movie) {
-  const index = watchList.value.indexOf(movie);
+  const index = watchList.value.findIndex(it => it.id === movie.id);
 
   if (index !== -1) {
     watchList.value.splice(index, 1);
@@ -48,9 +42,8 @@ function addToWatchList(movie: Movie) {
 }
 
 provide('watchListContext', {
-  watchListContains,
   removeFromWatchList,
-  getWatchList,
+  getWatchListMovies,
   addToWatchList
 } as WatchListContext)
 </script>

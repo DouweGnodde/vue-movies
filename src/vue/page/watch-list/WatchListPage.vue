@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h5 class="text-center">
+    <h4 class="text-center mb-3">
       Go to <router-link to="/movies">movies</router-link>
-    </h5>
-    <MovieCardList :movies="watchList.getWatchList()">
+    </h4>
+    <MovieCardList :movies="watchList.getWatchListMovies()">
       <template #no-movies>
         There are no movies in your watchlist.
       </template>
