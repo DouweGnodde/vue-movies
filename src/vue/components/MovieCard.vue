@@ -4,7 +4,6 @@
      <MoviePoster :url="movie.poster_path" size="w342"  />
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
-        <p class="card-text">{{ movie.overview}} </p>
         <a href="#" class="btn btn-primary">Read more...</a>
       </div>
   </div>
