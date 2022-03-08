@@ -23,7 +23,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script lang="ts" setup>
@@ -52,10 +51,10 @@ async function open(movieVal: Movie): Promise<void> {
   }
 
   loading.value = true;
+  openModal(modalDiv);
+
   movieDetails.value = await MovieApiClient.getMovieDetails(movieVal.id);
   loading.value = false;
-
-  openModal(modalDiv);
 }
 
 function close(): void {
