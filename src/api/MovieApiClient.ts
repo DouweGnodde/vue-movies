@@ -30,7 +30,6 @@ class MovieApiClient {
 
     static async getMovieDetails(movieId: number): Promise<MovieDetails> {
         const response = await axiosMovieApiClient.get(`/movie/${movieId}`);
-        console.log(response);
 
         return response.data;
     }

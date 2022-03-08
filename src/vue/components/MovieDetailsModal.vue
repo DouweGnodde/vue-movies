@@ -7,8 +7,7 @@
           <button type="button" class="btn-close" @click="close" />
         </div>
         <div class="modal-body">
-          <Loader v-if="loading" />
-          <template v-else>
+          <Loader :loading="loading">
             <MoviePoster :movie="movie" size="original"  />
             <div class="mb-2 text-center" v-if="movieDetails.tagline">
               <i>{{ movieDetails.tagline }}</i>
@@ -16,7 +15,7 @@
             <b>Overview</b>
             <p>{{ movie.overview }}</p>
             <MovieDetailsTable :movie-details="movieDetails" />
-          </template>
+          </Loader>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" @click="close">Close</button>

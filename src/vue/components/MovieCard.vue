@@ -4,7 +4,7 @@
      <MoviePoster :movie="movie" size="w342"  />
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
-        <a href="#" class="btn btn-primary" @click="$emit('read-more')">Read more...</a>
+        <a href="#" class="btn btn-primary" @click="emit('read-more')">Read more...</a>
       </div>
   </div>
 </template>
@@ -17,4 +17,6 @@ import MoviePoster from "./MoviePoster.vue";
 const props = defineProps<{
   movie: Movie
 }>()
+
+const emit = defineEmits(['read-more'])
 </script>
