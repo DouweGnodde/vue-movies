@@ -1,7 +1,7 @@
 <template>
   <div>
     <MovieCardList v-if="initialized" :movies="movies" />
-    <h4 class="text-center" v-if="loading">Laden...</h4>
+    <Loader v-if="loading" />
     <div v-if="initialized" class="d-grid gap-2 pt-3">
       <button class="btn btn-lg btn-primary btn-block" @click="loadMoreMovies">
         Load more
@@ -15,6 +15,7 @@ import MovieApiClient from "../../../api/MovieApiClient";
 import Movie from "../../../types/Movie";
 import { onMounted, Ref, ref } from "vue";
 import MovieCardList from "../../components/MovieCardList.vue";
+import Loader from "../../components/Loader.vue";
 
 let initialized = ref(false);
 let loading = ref(true);

@@ -1,6 +1,7 @@
 import axios from "axios";
 import Movie from "../types/Movie";
 import PosterSize from "../types/PosterSize";
+import MovieDetails from "../types/MovieDetails";
 
 interface MovieApiListResponse<T> {
     page: number
@@ -25,6 +26,13 @@ class MovieApiClient {
         });
 
         return response.data
+    }
+
+    static async getMovieDetails(movieId: number): Promise<MovieDetails> {
+        const response = await axiosMovieApiClient.get(`/movie/${movieId}`);
+        console.log(response);
+
+        return response.data;
     }
 }
 

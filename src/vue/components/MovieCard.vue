@@ -1,10 +1,10 @@
 <template>
   <div class="card">
      <WatchlistToggleBadge :movie="movie" />
-     <MoviePoster :url="movie.poster_path" size="w342"  />
+     <MoviePoster :movie="movie" size="w342"  />
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
-        <a href="#" class="btn btn-primary">Read more...</a>
+        <a href="#" class="btn btn-primary" @click="$emit('read-more')">Read more...</a>
       </div>
   </div>
 </template>
