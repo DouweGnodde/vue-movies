@@ -9,14 +9,14 @@ A vue 3 project using the https://www.themoviedb.org API
 
 # Developing
 
-Developing with Vite is very easy, to start run:
-`yarn dev`
-Enjoy your fast, HMR-included dev experience!
+Developing with Vite is very easy. <br>
+Simply run: `yarn dev` <br>
+And enjoy your fast, HMR-included dev experience!
 
 # Building for production
 
-To build the static site:
+To build the static site: <br>
 `yarn build`
 
-To run the static site in the browser:
+To run the static site in the browser: <br>
 `yarn preview`
