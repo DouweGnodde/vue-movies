@@ -1,6 +1,6 @@
 <template>
   <div class="modal" tabindex="-1" ref="modal">
-    <div class="modal-dialog" v-if="movie">
+    <div class="modal-dialog modal-lg" v-if="movie">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">{{ movie.title }}</h5>
