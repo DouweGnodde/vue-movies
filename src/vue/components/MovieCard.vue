@@ -4,7 +4,7 @@
      <MoviePoster :movie="movie" size="w342"  />
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
-        <a href="#" class="btn btn-primary" @click="emit('read-more')">Read more...</a>
+        <a class="btn btn-link ps-0" @click="emit('read-more')">Read more...</a>
       </div>
   </div>
 </template>

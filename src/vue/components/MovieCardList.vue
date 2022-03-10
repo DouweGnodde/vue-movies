@@ -12,7 +12,7 @@
             :key="movie.id"
             class="col-sm-12 col-md-3"
         >
-          <MovieCard :movie="movie" @read-more="movieDetailsModal.open(movie)" />
+          <MovieCard :movie="movie" @read-more="movieDetailsModal?.open(movie)" />
         </div>
       </div>
     </div>

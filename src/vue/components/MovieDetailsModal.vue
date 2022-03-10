@@ -8,13 +8,15 @@
         </div>
         <div class="modal-body">
           <Loader :loading="loading">
-            <MoviePoster :movie="movie" size="original"  />
-            <div class="mb-2 text-center" v-if="movieDetails.tagline">
-              <i>{{ movieDetails.tagline }}</i>
-            </div>
-            <b>Overview</b>
-            <p>{{ movie.overview }}</p>
-            <MovieDetailsTable :movie-details="movieDetails" />
+            <template v-if="movieDetails">
+              <MoviePoster :movie="movie" size="original"  />
+              <div class="mb-2 text-center" v-if="movieDetails.tagline">
+                <i>{{ movieDetails.tagline }}</i>
+              </div>
+              <b>Overview</b>
+              <p>{{ movie.overview }}</p>
+              <MovieDetailsTable :movie-details="movieDetails" />
+            </template>
           </Loader>
         </div>
         <div class="modal-footer">
